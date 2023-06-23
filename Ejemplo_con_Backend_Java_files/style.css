@@ -15,6 +15,14 @@ body {
   width: 600px;
 }
 
+.simple-linear {
+  background: linear-gradient(black,10%, #4d0c3e);
+}
+
+.container-form{
+	padding-top: 150px;
+}
+
 input {
   height: 25px;
 }

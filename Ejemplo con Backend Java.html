@@ -2,35 +2,49 @@
 <!-- saved from url=(0022)http://localhost:3000/ -->
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-            <title>Ejemplo con Backend Java</title>
-            <script type="text/javascript" src="./Ejemplo con Backend Java_files/jquery.js.descarga"></script>
-            <link rel="stylesheet" type="text/css" href="./Ejemplo con Backend Java_files/style.css">
-                <link rel="shortcut icon" type="image/png" href="http://localhost:3000/ui_assets/favicon.png">
-                    <script type="text/javascript" src="./Ejemplo con Backend Java_files/javascript.js.descarga"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" meta charset="UTF-8">
+            <title>Buscador</title>
+            <!-- Hojas de estilo-->
+            <link rel="stylesheet" type="text/css" href="Ejemplo_con_Backend_Java_files/style.css">
+            <link rel="stylesheet" type="text/css" href="Ejemplo_con_Backend_Java_files/materialize.css">
+            <link rel="stylesheet" type="text/css" href="Ejemplo_con_Backend_Java_files/normalize.css">
+            <!--Hojas de estilo-->
+            <link rel="shortcut icon" type="image/png" href="http://localhost:3000/ui_assets/favicon.png">
+            <!--JavaScript-->
+            <script type="text/javascript" src="Ejemplo con Backend Java_files/javascript.js.descarga"></script>
+            <script src="Ejemplo_con_Backend_Java_files/materialize.js"></script>
+	        
     </head>
 
-    <body>
-        <div id="layout">
-            <h1>Contador de palabras</h1>
-            <h3>Introduzca una frase:</h3>
-            <div>
-                <input type="text" id="search_text">
-            </div>
-                <br>
-                <div>
-                    <button id="submit_button">Enviar</button>
+    <body class="simple-linear"><!--colores utilizados (buscar en css) #ff8000, #00e7eb-->
+        <div class="container">
+            <h2 class="white-text center">Contador de palabras</h2>
+            <!--<h3>Introduzca una frase:</h3>-->
+            <br> 
+            <div class="row left">
+                <div class="input-field col s12">
+                    <input value="" id="search_text" type="text" class="validate white-text">
+                    <label class="active" for="palabra">Buscador</label>
                 </div>
-                <div id="results" style="display: block;">
-                    <table>
+            </div>
+            <br>
+
+            <div class="row center">
+                <!--
+                <button id="submit_button">Enviar</button>-->            
+                <button class="btn grey waves-effect waves-light center" type="submit" id="submit_button" name="action">Enviar</button>
+            </div>
+
+            <div id="results" style="display: block;" class="center">
+                    <table class="center white-text">
                         <tbody>
                             <thead>
                                 <tr>
-                                    <th>Libros con mejores resultados</th>
+                                    <th><h1 class="white-text">Libros con mejores resultados </h1></th>
                                 </tr>
                             </thead>
                             <tr>
-                                <td>García_Márquez,_Gabriel__1985_._El_amor_en_los_tiempos_del_cólera_[874]</td>
+                                <td>GarcÃ­a_MÃ¡rquez,_Gabriel__1985_._El_amor_en_los_tiempos_del_cÃ³lera_[874]</td>
                             </tr>
                             <tr>
                                 <td>Albom,_Mitch__2002_._Martes_con_mi_viejo_profesor_[382]</td>
@@ -48,7 +62,7 @@
                                 <td>Amis,_Martin__1990_._Los_monstruos_de_Einstein_[8080]</td>
                             </tr>
                             <tr>
-                                <td>García_Márquez,_Gabriel__1989_._El_general_en_su_laberinto_[875]</td>
+                                <td>Garcï¿½a_Mï¿½rquez,_Gabriel__1989_._El_general_en_su_laberinto_[875]</td>
                             </tr>
                             <tr>
                                 <td>Allende,_Isabel__1984_._De_amor_y_de_sombra_[6283]</td>
@@ -60,10 +74,10 @@
                                 <td>Bach,_Richard__1970_._Juan_Salvador_Gaviota_[15399]</td>
                             </tr>
                             <tr>
-                                <td>García_Márquez,_Gabriel__1967_._Cien_años_de_soledad_[8376]</td>
+                                <td>Garcï¿½a_Mï¿½rquez,_Gabriel__1967_._Cien_aï¿½os_de_soledad_[8376]</td>
                             </tr>
                             <tr>
-                                <td>Allende,_Isabel__1982_._La_casa_de_los_espíritus_[563]</td>
+                                <td>Allende,_Isabel__1982_._La_casa_de_los_espï¿½ritus_[563]</td>
                             </tr>
                             <tr>
                                 <td>Huxley,_Aldous__1932_._Un_mundo_feliz_[293]</td>
@@ -84,34 +98,34 @@
                                 <td>Alameddine,_Rabih__2008_._El_contador_de_historias_[5735]</td>
                             </tr>
                             <tr>
-                                <td>Gorki,_Máximo__1907_._La_madre_[1592]</td>
+                                <td>Gorki,_Mï¿½ximo__1907_._La_madre_[1592]</td>
                             </tr>
                             <tr>
-                                <td>Hobbes,_Thomas__1651_._Leviatán_[2938]</td>
+                                <td>Hobbes,_Thomas__1651_._Leviatï¿½n_[2938]</td>
                             </tr>
                             <tr>
-                                <td>Asimov,_Isaac__1985_._El_monstruo_subatómico_[167]</td>
+                                <td>Asimov,_Isaac__1985_._El_monstruo_subatï¿½mico_[167]</td>
                             </tr>
                             <tr>
-                                <td>Dostoievski,_Fiódor__1865_._Crimen_y_castigo_[13400]</td>
+                                <td>Dostoievski,_Fiï¿½dor__1865_._Crimen_y_castigo_[13400]</td>
                             </tr>
                             <tr>
                                 <td>Goleman,_Daniel__1995_._Inteligencia_emocional_[4998]</td>
                             </tr>
                             <tr>
-                                <td>Gaarder,_Jostein__1991_._El_mundo_de_Sofía_[6571]</td>
+                                <td>Gaarder,_Jostein__1991_._El_mundo_de_Sofï¿½a_[6571]</td>
                             </tr>
                             <tr>
-                                <td>Benítez,_J._J.__1984_.__Caballo_de_Troya_01__Jerusalén_[4826]</td>
+                                <td>Benï¿½tez,_J._J.__1984_.__Caballo_de_Troya_01__Jerusalï¿½n_[4826]</td>
                             </tr>
                             <tr>
-                                <td>Alten,_Steve__2001_.__Trilogía_maya_01__El_testamento_maya_[8901]</td>
+                                <td>Alten,_Steve__2001_.__Trilogï¿½a_maya_01__El_testamento_maya_[8901]</td>
                             </tr>
                             <tr>
                                 <td>Archer,_Jeffrey__1979_._Kane_y_Abel_[1965]</td>
                             </tr>
                             <tr>
-                                <td>Anónimo__2004_._Robin_Hood_[11853]</td>
+                                <td>Anï¿½nimo__2004_._Robin_Hood_[11853]</td>
                             </tr>
                             <tr>
                                 <td>Alcott,_Louisa_May__1871_._Hombrecitos_[15392]</td>
@@ -123,10 +137,10 @@
                                 <td>Hitler,_Adolf__1935_._Mi_lucha_[11690]</td>
                             </tr>
                             <tr>
-                                <td>Asimov,_Isaac__1967_._Guía_de_la_Biblia__Antiguo_Testamento__[6134]</td>
+                                <td>Asimov,_Isaac__1967_._Guï¿½a_de_la_Biblia__Antiguo_Testamento__[6134]</td>
                             </tr>
                             <tr>
-                                <td>Anónimo__1554_._Lazarillo_de_Tormes_[11043]</td>
+                                <td>Anï¿½nimo__1554_._Lazarillo_de_Tormes_[11043]</td>
                             </tr>
                             <tr>
                                 <td>Baum,_Lyman_Frank__1900_._El_Mago_de_Oz_[15715]</td>
@@ -159,7 +173,7 @@
                                 <td>Harris,_Thomas__1988_._El_silencio_de_los_inocentes_[11274]</td>
                             </tr>
                             <tr>
-                                <td>Golding,_William__1954_._El_señor_de_las_moscas_[6260]</td>
+                                <td>Golding,_William__1954_._El_seï¿½or_de_las_moscas_[6260]</td>
                             </tr>
                             <tr>
                                 <td>Alexander,_Caroline__1998_._Atrapados_en_el_hielo_[15727]</td>
@@ -172,7 +186,8 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
+            </div>
+        
         </div>
     </body>
 </html>
