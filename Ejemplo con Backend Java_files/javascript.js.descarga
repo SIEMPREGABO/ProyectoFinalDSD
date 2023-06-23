@@ -1,0 +1,42 @@
+$( document ).ready(function() { 
+
+    console.log( "ready!" );
+
+    var button = $("#submit_button");   
+    var searchBox = $("#search_text"); 
+    var resultsTable = $("#results table tbody"); 
+    var resultsWrapper = $("#results"); 
+
+    button.on("click", function(){
+
+        $.ajax({
+          method : "POST",
+          contentType: "text/plain",
+          data: createRequest(),
+          url: "procesar_datos",
+          dataType: "text",
+          success: onHttpResponse
+          });
+      });
+
+    function createRequest() { return searchBox.val(); }
+
+    function onHttpResponse( data, status ) {
+
+        if (status === "success" ) { addResults( data ); } 
+        else { alert("Error al conectarse al servidor: " + status); }
+    }
+
+    function addResults( data ) {
+
+        resultsTable.empty();
+        resultsWrapper.show();
+        resultsTable.append("<thead><tr><th>Libros con mejores resultados</th></tr></thead>");
+
+        const libros = data.split( ".txt\n" );
+
+        for ( const libro of libros )
+            resultsTable.append("<tr><td>" + libro + "</td></tr>");
+    }
+});
+
