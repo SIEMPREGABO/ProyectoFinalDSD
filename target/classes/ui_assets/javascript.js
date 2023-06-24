@@ -5,7 +5,8 @@ $( document ).ready(function() {
     var button = $("#submit_button");   
     var searchBox = $("#search_text"); 
     var resultsTable = $("#results table tbody"); 
-    var resultsWrapper = $("#results"); 
+    var resultsWrapper = $("#results");
+    var intro = document.getElementById('results'); 
 
     button.on("click", function(){
 
@@ -30,6 +31,7 @@ $( document ).ready(function() {
     function addResults( data ) {
 
         resultsTable.empty();
+        intro.style.paddingTop = '1cm';
         resultsWrapper.show();
         resultsTable.append("<thead><tr><th><h1 class=\"white-text\">Libros con mejores resultados</h1></th></tr></thead>");
         resultsTable.append("<tr><td>Titulo</td><td>Año publicacion</td><td>Autor</td></tr>");

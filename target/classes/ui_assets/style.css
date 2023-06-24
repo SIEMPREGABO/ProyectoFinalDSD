@@ -23,6 +23,10 @@ body {
 	padding-top: 150px;
 }
 
+.container-form-bottom{
+	padding-bottom: 150px;
+}
+
 input {
   height: 25px;
 }
