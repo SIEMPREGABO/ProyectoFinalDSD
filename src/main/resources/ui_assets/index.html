@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejemplo con Backend Java</title>
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" meta charset="UTF-8">
+
+        <!-- Hojas de estilo-->
+        <link rel="stylesheet" type="text/css" href="ui_assets/style.css">
+        <link rel="stylesheet" type="text/css" href="ui_assets/materialize.css">
+        <link rel="stylesheet" type="text/css" href="ui_assets/normalize.css">
+
+        <!--Hojas de estilo-->
+        <link rel="shortcut icon" type="image/png" href="ui_assets/favicon.png">
+
+        <!--JavaScript-->
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+        <script type="text/javascript" src="ui_assets/javascript.js"></script>
+        <script type="text/javascript" src="ui_assets/materialize.js"></script>
+
+        <!-- <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+        <link rel="stylesheet" type="text/css" href="ui_assets/style.css">
+        <link rel="shortcut icon" type="image/png" href="ui_assets/favicon.png">
+        <script type="text/javascript" src="ui_assets/javascript.js"></script>
+         -->
+    
+    </head>
+
+    <body class="simple-linear"><!--colores utilizados (buscar en css) #ff8000, #00e7eb-->
+        <div class="container">
+            <h2 class="white-text center">Text Miner</h2>
+            <!--<h3>Introduzca una frase:</h3>-->
+            <br> 
+            <div class="row left">
+                <div class="input-field col s12">
+                    <input value="" id="search_text" type="text" class="validate white-text">
+                    <label class="active" for="palabra">Buscador</label>
+                </div>
+            </div>
+            <br>
+
+            <div class="row center">
+                <!--
+                <button id="submit_button">Enviar</button>-->            
+                <button class="btn grey waves-effect waves-light center" type="submit" id="submit_button" name="action">Enviar</button>
+            </div>
+
+            <div id="results" style="display: block;" class="center">
+                    <table class="center white-text">
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

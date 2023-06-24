@@ -31,12 +31,19 @@ $( document ).ready(function() {
 
         resultsTable.empty();
         resultsWrapper.show();
-        resultsTable.append("<thead><tr><th>Libros con mejores resultados</th></tr></thead>");
+        resultsTable.append("<thead><tr><th><h1 class=\"white-text\">Libros con mejores resultados</h1></th></tr></thead>");
+        resultsTable.append("<tr><td>Titulo</td><td>Año publicacion</td><td>Autor</td></tr>");
 
-        const libros = data.split( ".txt\n" );
+        const librosNoTxt = data.split( ".txt\n" );
+        var librosNoTxtU = "";
 
-        for ( const libro of libros )
-            resultsTable.append("<tr><td>" + libro + "</td></tr>");
+        for ( const libro of librosNoTxt )
+             librosNoTxtU += libro + "-\n";
+
+        const librosSeparador = librosNoTxtU.split( "-" );
+
+        for ( var i = 0; i < librosSeparador.length - 2; i+=3 )
+            resultsTable.append("<tr><td>" + librosSeparador[i+2] + "</td><td>" + librosSeparador[i+1] + "</td><td>" + librosSeparador[i] + "</td></tr>");
     }
 });
 
