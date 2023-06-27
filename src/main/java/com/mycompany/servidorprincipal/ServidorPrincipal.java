@@ -1,3 +1,11 @@
+//////////////////////////////////////////////////
+//  PROYECTO FINAL - SISTEMAS DISTRIBUIDOS      //
+//                                              //
+//  DIAZ MALDONADO JESUS RENATO         - 4CM13 //
+//  MIRON AREVALO GABRIEL OMAR          - 4CM14 //
+//  TORRES CARRILLO JOSEHF MIGUEL ANGEL - 4CM11 //
+//////////////////////////////////////////////////
+
 package com.mycompany.servidorprincipal;
 
 import com.sun.net.httpserver.HttpContext;
@@ -104,12 +112,12 @@ public class ServidorPrincipal {
         }
 
         //Variables compartidas
-        localHost = 1;
-        String[] directoriosGET = {"http://localhost:8082/status", "http://localhost:8083/status", "http://localhost:8084/status"};
-        String[] directoriosPOST = {"http://localhost:8082/tarea", "http://localhost:8083/tarea", "http://localhost:8084/tarea"};
-        
-//        String[] directoriosGET = {"http://34.16.142.8:80/status", "http://34.125.20.153:80/status", "http://34.125.80.127:80/status"};
-//        String[] directoriosPOST = {"http://34.16.142.8:80/tarea", "http://34.125.20.153:80/tarea", "http://34.125.80.127:80/tarea"};
+//          localHost = 1;
+//          String[] directoriosGET = {"http://localhost:8082/status", "http://localhost:8083/status", "http://localhost:8084/status"};
+//          String[] directoriosPOST = {"http://localhost:8082/tarea", "http://localhost:8083/tarea", "http://localhost:8084/tarea"};
+//        
+      String[] directoriosGET = {"http://34.125.28.136:80/status", "http://34.125.104.201:80/status", "http://34.125.92.153:80/status"};
+      String[] directoriosPOST = {"http://34.125.28.136:80/tarea", "http://34.125.104.201:80/tarea", "http://34.125.92.153:80/tarea"};
         
         String[] paramPalabras = { " ", " ", " " }; 
         
@@ -126,59 +134,57 @@ public class ServidorPrincipal {
         int contador = 0;
         
         //Enviar peticion  GET
-        Aggregator aggregatorGET = new Aggregator( "GET" );
-        List< String> results = aggregatorGET.sendTaskToWorkers( Arrays.asList( directoriosGET ), Arrays.asList( paramPalabras ) );
-
-        for (String result : results) {
-            if (contador == 0) r1 = result.trim();
-            if (contador == 1) r2 = result.trim();
-            if (contador == 2) r3 = result.trim();
-            contador++;
-        }
-
-        response = r1 + "\n" + r2 + "\n" + r3;
-        System.out.println( "\n" + response + "\n" );
-
-        //Metodo entre envio de peticiones
-        
-        bandera8082 = validacionServer( r1, 1 );
-        bandera8083 = validacionServer( r2, 2 );
-        bandera8084 = validacionServer( r3, 3 );
+//        Aggregator aggregatorGET = new Aggregator( "GET" );
+//        List< String> results = aggregatorGET.sendTaskToWorkers( Arrays.asList( directoriosGET ), Arrays.asList( paramPalabras ) );
+//
+//        for (String result : results) {
+//            if (contador == 0) r1 = result.trim();
+//            if (contador == 1) r2 = result.trim();
+//            if (contador == 2) r3 = result.trim();
+//            contador++;
+//        }
+//
+//        response = r1 + "\n" + r2 + "\n" + r3;
+//        System.out.println( "\n" + response + "\n" );
+//
+//        //Metodo entre envio de peticiones
+//        
+//        bandera8082 = validacionServer( r1, 1 );
+//        bandera8083 = validacionServer( r2, 2 );
+//        bandera8084 = validacionServer( r3, 3 );
 
         rango8082 = parametro + " 0/15";
         rango8083 = parametro + " 15/15"; 
         rango8084 = parametro + " 30/16";
 
-        if ( bandera8082 == 1 ) {
-            
-            rango8083 = parametro + " 0/30";
-            rango8084 = parametro + " 30/16"; 
-        }
-
-        if ( bandera8083 == 1 ) {
-            
-            rango8082 = parametro + " 0/15";
-            rango8084 = parametro + " 15/31"; 
-        }
-
-        if ( bandera8084 == 1 ) {
-            
-            rango8082 = parametro + " 0/15";
-            rango8083 = parametro + " 15/31";
-        }
-
-        if ( bandera8082 == 1 && bandera8083 == 1 ) rango8084 = parametro + " 0/46";
-        if ( bandera8083 == 1 && bandera8084 == 1 ) rango8082 = parametro + " 0/46";
-        if ( bandera8082 == 1 && bandera8084 == 1 ) rango8083 = parametro + " 0/46";
+//        if ( bandera8082 == 1 ) {
+//            
+//            rango8083 = parametro + " 0/30";
+//            rango8084 = parametro + " 30/16"; 
+//        }
+//
+//        if ( bandera8083 == 1 ) {
+//            
+//            rango8082 = parametro + " 0/15";
+//            rango8084 = parametro + " 15/31"; 
+//        }
+//
+//        if ( bandera8084 == 1 ) {
+//            
+//            rango8082 = parametro + " 0/15";
+//            rango8083 = parametro + " 15/31";
+//        }
+//
+//        if ( bandera8082 == 1 && bandera8083 == 1 ) rango8084 = parametro + " 0/46";
+//        if ( bandera8083 == 1 && bandera8084 == 1 ) rango8082 = parametro + " 0/46";
+//        if ( bandera8082 == 1 && bandera8084 == 1 ) rango8083 = parametro + " 0/46";
 
         paramPalabras[0] = rango8082;
         paramPalabras[1] = rango8083;
         paramPalabras[2] = rango8084;
 
-        for ( String result : paramPalabras )
-            System.out.println( result );
-
-        System.out.println();
+        // for ( String result : paramPalabras )
+        //     System.out.println( result );
 
         try { Thread.sleep(1000); }
         catch (InterruptedException e) { e.printStackTrace(); }
@@ -197,6 +203,8 @@ public class ServidorPrincipal {
         }
 
         response = r4 + "\n" + r5 + "\n" + r6;
+        
+        //System.out.println( "\n\n\n" + response + "\n\n\n" );
 
         String[] comprobacionR4 = r4.split( " " );
         String[] comprobacionR5 = r5.split( " " );
@@ -210,10 +218,11 @@ public class ServidorPrincipal {
         if ( comprobacionR5[0].equals( "Error" ) && comprobacionR6[0].equals( "Error" ) ) response = r4;
         if ( comprobacionR4[0].equals( "Error" ) && comprobacionR6[0].equals( "Error" ) ) response = r5;
 
-        //System.out.println( "\n" + response + "\n" );
+
 
         response = obtenerTFITF( response, parametro );
         
+        System.out.println( "\n" + response + "\n" );
         sendResponse(response.getBytes(), exchange);
     }
 
@@ -258,7 +267,7 @@ public class ServidorPrincipal {
         Map< String, Float > map = new HashMap<>();
 
         int aux = 0;
-        try{
+
         //Ciclo para calcular en cuantos libros se encontro las palabras
         for (String libro : libroTF) {
 
@@ -324,9 +333,9 @@ public class ServidorPrincipal {
 
         for (Map.Entry< String, Float > entry : list){
             response += entry.getKey() + "\n";
-            System.out.println( entry.getKey() + " --- " + entry.getValue() );
+            //System.out.println( entry.getKey() + " --- " + entry.getValue() );
         }
-        } catch ( Exception e ){ e.printStackTrace(); }
+
         return response;
     }
 

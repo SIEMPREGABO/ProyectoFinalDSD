@@ -1,3 +1,11 @@
+//////////////////////////////////////////////////
+//  PROYECTO FINAL - SISTEMAS DISTRIBUIDOS      //
+//                                              //
+//  DIAZ MALDONADO JESUS RENATO         - 4CM13 //
+//  MIRON AREVALO GABRIEL OMAR          - 4CM14 //
+//  TORRES CARRILLO JOSEHF MIGUEL ANGEL - 4CM11 //
+//////////////////////////////////////////////////
+
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpContext;
 import com.sun.net.httpserver.HttpExchange;
